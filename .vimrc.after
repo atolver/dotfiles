@@ -1,0 +1,86 @@
+set nocompatible
+set t_Co=256
+
+colorscheme xoria256
+AirlineTheme ubaryd
+
+set linespace=15
+
+set nowrap
+set tabstop=4
+set smarttab
+set tags=tags
+set softtabstop=4
+set expandtab
+set shiftwidth=4
+set shiftround
+set backspace=indent,eol,start
+set autoindent
+set copyindent
+set number
+set ignorecase
+set smartcase
+set timeout timeoutlen=400 ttimeoutlen=200
+set visualbell
+set noerrorbells
+set autowrite
+
+nmap <leader>w :w!<cr>
+
+imap <leader>i <esc>
+cmap <leader>i <esc>
+
+"Auto change directory to match current file ,cd
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+nmap <C-e> :NERDTreeToggle<cr>
+
+"Split below
+nmap :sp :rightbelow sp<cr>
+
+" Forward or back to buffer
+nmap :bp :BufSurfBack<cr>
+nmap :bn :BufSurfForward<cr>
+
+set noshowmode
+
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+abbrev gm !php artisan generate:model
+abbrev gc !php artisan generate:controller
+abbrev gmig !php artisan generate:migration
+
+autocmd BufWritePre *.php :%s/\s\+$//e
+
+" Laravel Specific mappings
+nmap <leader>lr :e app/routes.php<cr>
+nmap <leader>lca :e app/config/app.php<cr>96Gf(%O
+nmap <leader>lcd :e app/config/database.php<cr>
+nmap <leader>lc :e composer.json<cr>
+
+"highlight Search cterm=underline
+
+"Swap files out of project root
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+
+" Run PHPUnit tests
+map <leader>t :!phpunit %<cr>
+
+let g:airline#extensions#tabline#enabled = 1
+
+let g:phpcomplete_index_composer_command="composer"
+autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
+"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+" Taggatron settings
+let g:tagcommands = {
+\    "php" : {"tagfile":".php.tags","args":"-R","cmd":"ctags"},
+\    "javascript" : {"tagfile":".js.tags","args":"-R","cmd":"ctags"}
+\}

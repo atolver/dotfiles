@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+export DEBIAN_FRONTEND=noninteractive
+rm -f ~/.zshrc
+ln -s ~/.dotfiles/.zshrc ~/.zshrc

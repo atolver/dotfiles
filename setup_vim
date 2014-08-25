@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+export DEBIAN_FRONTEND=noninteractive
+curl -Lo- https://bit.ly/janus-bootstrap | bash
+rm -f ~/.vimrc.before
+ln -s ~/.dotfiles/.vimrc.before ~/.vimrc.before
+rm -f ~/.vimrc.after
+ln -s ~/.dotfiles/.vimrc.after ~/.vimrc.after
+rm -f ~/.janus
+ln -s ~/.dotfiles/.janus ~/.janus
+cd ~/.janus/vimproc.vim && make

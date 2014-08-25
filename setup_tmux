@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+export DEBIAN_FRONTEND=noninteractive
+rm -f ~/.tmux.conf
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
