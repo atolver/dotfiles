@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 export DEBIAN_FRONTEND=noninteractive
+sudo gem install rake
 curl -Lo- https://bit.ly/janus-bootstrap | bash
 rm -f ~/.vimrc.before
 ln -s ~/.dotfiles/.vimrc.before ~/.vimrc.before
