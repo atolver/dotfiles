@@ -6,6 +6,16 @@ rm -f ~/.vimrc.before
 ln -s ~/.dotfiles/.vimrc.before ~/.vimrc.before
 rm -f ~/.vimrc.after
 ln -s ~/.dotfiles/.vimrc.after ~/.vimrc.after
-rm -f ~/.janus
-ln -s ~/.dotfiles/.janus ~/.janus
+
+rm -rf ~/.janus
+mkdir ~/.janus
+cd ~/.janus
+git clone https://github.com/m2mdas/phpcomplete-extended.git
+git clone https://github.com/m2mdas/phpcomplete-extended-laravel.git
+git clone https://github.com/Shougo/vimproc.vim.git
+git clone https://github.com/Shougo/unite.vim.git
+git clone https://github.com/bling/vim-airline.git
+git clone https://github.com/edkolev/tmuxline.vim.git
+git clone https://github.com/joonty/vim-taggatron.git
 cd ~/.janus/vimproc.vim && make
+mkdir ~/.vim/backup ~/.vim/swap
