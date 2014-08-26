@@ -84,3 +84,5 @@ let g:tagcommands = {
 \    "php" : {"tagfile":".php.tags","args":"-R","cmd":"ctags"},
 \    "javascript" : {"tagfile":".js.tags","args":"-R","cmd":"ctags"}
 \}
+
+let g:DisableAutoPHPFolding = 1

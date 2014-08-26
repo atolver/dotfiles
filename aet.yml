@@ -20,5 +20,5 @@ windows:
       layout: main-vertical
       panes:
         - vim ~/larabook
+      panes:
         - gulp
- 
