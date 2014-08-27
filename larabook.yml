@@ -1,6 +1,6 @@
-# ~/.tmuxinator/aet.yml
+# ~/.tmuxinator/larabook.yml
 
-name: aet
+name: larabook
 root: ~/larabook
 
 # Optional tmux socket

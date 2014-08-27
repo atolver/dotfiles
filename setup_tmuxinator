@@ -2,3 +2,5 @@
 export DEBIAN_FRONTEND=noninteractive
 rm -f ~/.tmuxinator/aet.yml
 ln -s ~/.dotfiles/aet.yml ~/.tmuxinator/aet.yml
+ln -s ~/.dotfiles/laracast.yml ~/.tmuxinator/laracast.yml
+ln -s ~/.dotfiles/larabook.yml ~/.tmuxinator/larabook.yml

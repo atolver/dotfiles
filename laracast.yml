@@ -1,7 +1,7 @@
-# ~/.tmuxinator/aet.yml
+# ~/.tmuxinator/laracast.yml
 
-name: aet
-root: ~/larabook
+name: laracast
+root: ~/laracast
 
 # Optional tmux socket
 # socket_name: foo
