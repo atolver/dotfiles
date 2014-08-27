@@ -29,6 +29,7 @@ nmap <leader>w :w!<cr>
 
 imap <leader>i <esc>
 cmap <leader>i <esc>
+set pastetoggle=<leader>p
 
 "Auto change directory to match current file ,cd
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
