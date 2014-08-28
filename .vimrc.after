@@ -29,7 +29,7 @@ nmap <leader>w :w!<cr>
 
 imap <leader>i <esc>
 cmap <leader>i <esc>
-set pastetoggle=<leader>p
+set pastetoggle=<leader>v
 
 "Auto change directory to match current file ,cd
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
@@ -85,5 +85,7 @@ let g:tagcommands = {
 \    "php" : {"tagfile":".php.tags","args":"-R","cmd":"ctags"},
 \    "javascript" : {"tagfile":".js.tags","args":"-R","cmd":"ctags"}
 \}
+set tags=php.tags,.php.tags
 
 let g:DisableAutoPHPFolding = 1
+let NERDTreeShowHidden=1

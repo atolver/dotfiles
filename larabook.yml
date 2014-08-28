@@ -24,5 +24,5 @@ windows:
   - utils:
       layout: main-vertical
       panes:
-        - gulp && clear
-        - mysql -u homestead -psecret homestead
+        - gulp; clear
+        - mysql -u homestead -psecret larabook
