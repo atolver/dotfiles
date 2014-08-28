@@ -12,4 +12,5 @@ set term=xterm-256color
 let mapleader = ","
 let g:mapleader = ","
 
-
+call janus#disable_plugin('vim-snipmate')
+call janus#disable_plugin('snipmate')
