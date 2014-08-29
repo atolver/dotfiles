@@ -1,3 +1,10 @@
+" Vim mappings
+nmap <leader>vb :e ~/.vimrc.before<cr>
+nmap <leader>va :e ~/.vimrc.after<cr>
+
+"Source current file.
+nmap <leader>so :so %<cr>
+
 set nocompatible
 set t_Co=256
 
@@ -27,8 +34,12 @@ set autowrite
 
 nmap <leader>w :w!<cr>
 
-imap <leader>i <esc>
-cmap <leader>i <esc>
+imap <leader><leader> <esc>
+cmap <leader><leader> <esc>
+vmap <leader><leader> <esc>
+
+inoremap <leader>. ->
+
 set pastetoggle=<leader>v
 
 "Auto change directory to match current file ,cd
@@ -39,7 +50,7 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-nmap <C-e> :NERDTreeToggle<cr>
+"nmap <C-e> :NERDTreeToggle<cr>
 
 "Split below
 nmap :sp :rightbelow sp<cr>
@@ -76,20 +87,42 @@ map <leader>t :!phpunit %<cr>
 
 let g:airline#extensions#tabline#enabled = 1
 
-let g:phpcomplete_index_composer_command="composer"
-autocmd  FileType  php setlocal omnifunc=phpcomplete_extended#CompletePHP
-"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
 " Taggatron settings
 let g:tagcommands = {
 \    "php" : {"tagfile":".php.tags","args":"-R","cmd":"ctags"},
 \    "javascript" : {"tagfile":".js.tags","args":"-R","cmd":"ctags"}
 \}
-set tags=php.tags,.php.tags
+set tags=.php.tags
 
 let g:DisableAutoPHPFolding = 1
 let NERDTreeShowHidden=1
 
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"
+
+let g:phpcomplete_relax_static_constraint = 1
+
+autocmd cursorhold * set nohlsearch
+autocmd cursormoved * set hlsearch
+
+autocmd FileType php set ft=php.laravel
+
+" Remove search results
+command! H let @/=""
+
+" Add a new dependency to a PHP class
+function! AddDependency()
+let dependency = input('Var Name: ')
+let namespace = input('Class Path: ')
+
+let segments = split(namespace, '\')
+let typehint = segments[-1]
+
+exec 'normal gg/construct^M:H^Mf)i, ' . typehint . ' $' . dependency . '^[/}^>O$this->^[a' . dependency . ' = $' . dependency . ';^[?{^MkOprotected $' . dependency . ';^M^[?{^MOuse ' . namespace . ';^M^['
+
+" Remove opening comma if there is only one dependency
+exec 'normal :%s/(, /(/g'
+endfunction
+nmap ,2 :call AddDependency()<cr>

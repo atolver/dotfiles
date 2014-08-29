@@ -6,17 +6,32 @@ rm -f ~/.vimrc.before
 ln -s ~/.dotfiles/.vimrc.before ~/.vimrc.before
 rm -f ~/.vimrc.after
 ln -s ~/.dotfiles/.vimrc.after ~/.vimrc.after
+rm -rf ~/.vim/UltiSnips
+ln -s ~/.dotfiles/UltiSnips ~/.vim/UltiSnips
 
 rm -rf ~/.janus
 mkdir ~/.janus
 cd ~/.janus
-git clone https://github.com/m2mdas/phpcomplete-extended.git
-git clone https://github.com/m2mdas/phpcomplete-extended-laravel.git
 git clone https://github.com/Shougo/vimproc.vim.git
 git clone https://github.com/Shougo/unite.vim.git
 git clone https://github.com/bling/vim-airline.git
 git clone https://github.com/edkolev/tmuxline.vim.git
 git clone https://github.com/joonty/vim-taggatron.git
 git clone https://github.com/Raimondi/delimitMate.git
+git clone https://github.com/markwu/vim-laravel4-snippets.git
+git clone https://github.com/vim-scripts/UltiSnips.git
+git clone https://github.com/rstacruz/sparkup.git
+git clone https://github.com/xsbeats/vim-blade.git
+
+cd ~/
+wget "https://github.com/shawncplus/phpcomplete.vim/raw/master/misc/ctags-5.8_better_php_parser.tar.gz" -O ctags-5.8_better_php_parser.tar.gz
+tar xvf ctags-5.8_better_php_parser.tar.gz
+cd ctags-5.8_better_php_parser
+./configure
+make
+sudo make install
+cd ..
+rm -rf ctags-5.8_better_php_parser*
+
 cd ~/.janus/vimproc.vim && make
 mkdir ~/.vim/backup ~/.vim/swap

@@ -1,0 +1,23 @@
+snippet dvar "Variable with doc block."
+/**
+* $1
+* @var ${2:string}
+**/
+${3:public }$${4:var};${0}
+endsnippet
+
+snippet vara "Variable with arrow. ($var->)"
+$${1:var}->
+endsnippet
+
+snippet varb "Variable with brackets. ($var[])"
+$${1:var}[$2]
+endsnippet
+
+snippet varc "Variable with arrow and brackets. ($var[]->)"
+$${1:var}[$2]->
+endsnippet
+
+snippet kv "key => value filler for array"
+${1:key} => ${2:value}
+endsnippet
