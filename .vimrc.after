@@ -8,6 +8,8 @@ nmap <leader>so :so %<cr>
 set nocompatible
 set t_Co=256
 
+set history=100
+
 colorscheme xoria256
 AirlineTheme ubaryd
 
@@ -37,6 +39,9 @@ nmap <leader>w :w!<cr>
 imap <leader><leader> <esc>
 cmap <leader><leader> <esc>
 vmap <leader><leader> <esc>
+nnoremap :: q:
+nnoremap // q/
+nnoremap ?? q?
 
 inoremap <leader>. ->
 
