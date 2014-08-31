@@ -55,7 +55,7 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-"nmap <C-e> :NERDTreeToggle<cr>
+nnoremap  <silent> <leader>z :ZoomWin<cr><cr>
 
 "Split below
 nmap :sp :rightbelow sp<cr>
