@@ -88,13 +88,13 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
 " Run PHPUnit tests
-map <leader>t :!phpunit %<cr>
+map <leader>t :!clear && phpunit<cr>
 
 let g:airline#extensions#tabline#enabled = 1
 
 " Taggatron settings
 let g:tagcommands = {
-\    "php" : {"tagfile":".php.tags","args":"-R","cmd":"ctags"},
+\    "php" : {"tagfile":".php.tags","args":"-R --fields=+aimS --PHP-kinds=+cf --regex-php='/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i'","cmd":"ctags"},
 \    "javascript" : {"tagfile":".js.tags","args":"-R","cmd":"ctags"}
 \}
 set tags=.php.tags
@@ -108,6 +108,12 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 
 let g:phpcomplete_relax_static_constraint = 1
+let g:phpcomplete_search_tags_for_variables = 1
+
+inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+noremap <Leader>u :call PhpInsertUse()<CR>
+inoremap <Leader>e <C-O>:call PhpExpandClass()<CR>
+noremap <Leader>e :call PhpExpandClass()<CR>
 
 autocmd cursorhold * set nohlsearch
 autocmd cursormoved * set hlsearch

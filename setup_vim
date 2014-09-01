@@ -8,6 +8,8 @@ rm -f ~/.vimrc.after
 ln -s ~/.dotfiles/.vimrc.after ~/.vimrc.after
 rm -rf ~/.vim/UltiSnips
 ln -s ~/.dotfiles/UltiSnips ~/.vim/UltiSnips
+rm -rf ~/.vim/.ctags
+ln -s ~/.dotfiles/.ctags ~/.ctags
 
 rm -rf ~/.janus
 mkdir ~/.janus
@@ -23,16 +25,17 @@ git clone https://github.com/vim-scripts/UltiSnips.git
 git clone https://github.com/rstacruz/sparkup.git
 git clone https://github.com/xsbeats/vim-blade.git
 git clone https://github.com/airblade/vim-gitgutter.git
+git clone https://github.com/shawncplus/phpcomplete.vim.git
 
 cd ~/
 wget "https://github.com/shawncplus/phpcomplete.vim/raw/master/misc/ctags-5.8_better_php_parser.tar.gz" -O ctags-5.8_better_php_parser.tar.gz
 tar xvf ctags-5.8_better_php_parser.tar.gz
-cd ctags-5.8_better_php_parser
+cd ctags
 ./configure
 make
 sudo make install
 cd ..
-rm -rf ctags-5.8_better_php_parser*
+rm -rf ctags*
 
 cd ~/.janus/vimproc.vim && make
 mkdir ~/.vim/backup ~/.vim/swap
