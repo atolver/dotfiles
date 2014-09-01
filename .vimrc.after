@@ -69,8 +69,8 @@ set noshowmode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-abbrev gm !php artisan generate:model
-abbrev gc !php artisan generate:controller
+abbrev gmod !php artisan generate:model
+abbrev gcon !php artisan generate:controller
 abbrev gmig !php artisan generate:migration
 
 autocmd BufWritePre *.php :%s/\s\+$//e
@@ -125,15 +125,21 @@ command! H let @/=""
 
 " Add a new dependency to a PHP class
 function! AddDependency()
+call inputsave()
 let dependency = input('Var Name: ')
 let namespace = input('Class Path: ')
+call inputrestore()
 
 let segments = split(namespace, '\')
 let typehint = segments[-1]
 
-exec 'normal gg/construct^M:H^Mf)i, ' . typehint . ' $' . dependency . '^[/}^>O$this->^[a' . dependency . ' = $' . dependency . ';^[?{^MkOprotected $' . dependency . ';^M^[?{^MOuse ' . namespace . ';^M^['
+exec "normal! gg/construct\<cr>:H\<cr>f)i, " . typehint . " $" . 
+            \ dependency . "\<esc>/}\<cr>O$this->\<esc>a" . 
+            \ dependency . " = $" . dependency . 
+            \ ";\<esc>?{\<cr>kOprotected $" . dependency . 
+            \ ";\<cr>\<esc>?{\<cr>Ouse " . namespace . ";\<cr>\<esc>"
 
 " Remove opening comma if there is only one dependency
-exec 'normal :%s/(, /(/g'
+exec "normal :%s/(, /(/g"
 endfunction
 nmap ,2 :call AddDependency()<cr>
