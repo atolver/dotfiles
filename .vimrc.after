@@ -133,13 +133,15 @@ call inputrestore()
 let segments = split(namespace, '\')
 let typehint = segments[-1]
 
-exec "normal! gg/construct\<cr>:H\<cr>f)i, " . typehint . " $" . 
-            \ dependency . "\<esc>/}\<cr>O$this->\<esc>a" . 
-            \ dependency . " = $" . dependency . 
-            \ ";\<esc>?{\<cr>kOprotected $" . dependency . 
+exec "normal! gg/construct\<cr>:H\<cr>f)i, " . typehint . " $" .
+            \ dependency . "\<esc>/}\<cr>O$this->\<esc>a" .
+            \ dependency . " = $" . dependency .
+            \ ";\<esc>?{\<cr>kOprotected $" . dependency .
             \ ";\<cr>\<esc>?{\<cr>Ouse " . namespace . ";\<cr>\<esc>"
 
 " Remove opening comma if there is only one dependency
 exec "normal :%s/(, /(/g"
 endfunction
 nmap ,2 :call AddDependency()<cr>
+
+let g:php_refactor_command="php ~/refactor.phar"

@@ -17,3 +17,5 @@ call janus#disable_plugin('snipmate')
 
 
 let g:UltiSnipsListSnippets="<leader>sl"
+
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"

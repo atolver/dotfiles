@@ -10,6 +10,8 @@ rm -rf ~/.vim/UltiSnips
 ln -s ~/.dotfiles/UltiSnips ~/.vim/UltiSnips
 rm -rf ~/.vim/.ctags
 ln -s ~/.dotfiles/.ctags ~/.ctags
+rm -rf ~/refactor.phar
+ln -s ~/.dotfiles/refactor.phar ~/refactor.phar
 
 rm -rf ~/.janus
 mkdir ~/.janus
@@ -26,6 +28,7 @@ git clone https://github.com/rstacruz/sparkup.git
 git clone https://github.com/xsbeats/vim-blade.git
 git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/shawncplus/phpcomplete.vim.git
+git clone https://github.com/atolver/vim-php-refactoring.git
 
 cd ~/
 wget "https://github.com/shawncplus/phpcomplete.vim/raw/master/misc/ctags-5.8_better_php_parser.tar.gz" -O ctags-5.8_better_php_parser.tar.gz
