@@ -69,6 +69,7 @@ PATH=$PATH:~/myscripts:/usr/local/lib/ruby/gems/2.0.0/gems/tmuxinator-0.6.5/bin:
 PATH=$PATH:/usr/local/Cellar/ruby/2.0.0-p247/bin
 PATH=$PATH:$HOME/.composer/vendor/bin
 PATH=$PATH:/usr/lib/jvm/java-7-openjdk-amd64/bin
+PATH=$PATH:$HOME/bin
 
 export TERM='xterm-256color'
 export CLICOLOR=1

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+kill `pgrep -f "Xvfb :1 -screen"`
+kill `pgrep -f org.eclim.application`

@@ -16,6 +16,11 @@ rm -rf ~/refactor.phar
 ln -s ~/.dotfiles/refactor.phar ~/refactor.phar
 rm -rf ~/phpmd.xml
 ln -s ~/.dotfiles/phpmd.xml ~/phpmd.xml
+rm -rf ~/bin
+mkdir ~/bin
+ln -s ~/.dotfiles/eclim.sh ~/bin/eclim.sh
+ln -s ~/.dotfiles/start_eclim ~/bin/start_eclim
+ln -s ~/.dotfiles/stop_eclim ~/bin/stop_eclim
 
 rm -rf ~/.janus
 mkdir ~/.janus
