@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 export DEBIAN_FRONTEND=noninteractive
 sudo gem install rake
+sudo apt-get install openjdk-7-jdk xvfb build-essential ant
+sudo easy_install -U Sphinx
 curl -Lo- https://bit.ly/janus-bootstrap | bash
 rm -f ~/.vimrc.before
 ln -s ~/.dotfiles/.vimrc.before ~/.vimrc.before
@@ -12,6 +14,8 @@ rm -rf ~/.vim/.ctags
 ln -s ~/.dotfiles/.ctags ~/.ctags
 rm -rf ~/refactor.phar
 ln -s ~/.dotfiles/refactor.phar ~/refactor.phar
+rm -rf ~/phpmd.xml
+ln -s ~/.dotfiles/phpmd.xml ~/phpmd.xml
 
 rm -rf ~/.janus
 mkdir ~/.janus
@@ -29,6 +33,12 @@ git clone https://github.com/xsbeats/vim-blade.git
 git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/shawncplus/phpcomplete.vim.git
 git clone https://github.com/atolver/vim-php-refactoring.git
+git clone https://github.com/Valloric/YouCompleteMe.git
+
+
+cd ~/.janus/YouCompleteMe
+git submodule update --init --recursive
+./install.sh
 
 cd ~/
 wget "https://github.com/shawncplus/phpcomplete.vim/raw/master/misc/ctags-5.8_better_php_parser.tar.gz" -O ctags-5.8_better_php_parser.tar.gz
@@ -39,6 +49,16 @@ make
 sudo make install
 cd ..
 rm -rf ctags*
+
+cd ~/
+sudo chown vagrant:vagrant -R /opt
+wget "http://mirrors.ibiblio.org/pub/mirrors/eclipse/technology/epp/downloads/release/luna/R/eclipse-php-luna-R-linux-gtk-x86_64.tar.gz"
+tar -zxf eclipse-php-luna-R-linux-gtk-x86_64.tar.gz -C /opt
+git clone git://github.com/ervandew/eclim.git
+cd ~/eclim
+ant -Declipse.home=/opt/eclipse
+ant -Declipse.home=/opt/eclipse vimdocs
+cd ~/
 
 cd ~/.janus/vimproc.vim && make
 mkdir ~/.vim/backup ~/.vim/swap

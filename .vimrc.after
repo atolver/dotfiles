@@ -50,10 +50,10 @@ set pastetoggle=<leader>v
 "Auto change directory to match current file ,cd
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+"nmap <C-h> <C-w>h
+"nmap <C-j> <C-w>j
+"nmap <C-k> <C-w>k
+"nmap <C-l> <C-w>l
 
 nnoremap  <silent> <leader>z :ZoomWin<cr><cr>
 
@@ -94,9 +94,19 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Taggatron settings
 let g:tagcommands = {
-\    "php" : {"tagfile":".php.tags","args":"-R --fields=+aimS --PHP-kinds=+cf --regex-php='/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i'","cmd":"ctags"},
+\    "php" : {
+\       "tagfile":".php.tags",
+\       "args":"-R --fields=+aimS --PHP-kinds=+cf --regex-php=\"/^[ \\t]*trait[ \\t]+([a-z0_9_]+)/\\1/t,traits/i\"",
+\       "cmd":"ctags"
+\   },
+\    "php.laravel" : {
+\       "tagfile":".php.tags",
+\       "args":"-R --fields=+aimS --PHP-kinds=+cf --regex-php=\"/^[ \\t]*trait[ \\t]+([a-z0_9_]+)/\\1/t,traits/i\"",
+\       "cmd":"ctags"
+\   },
 \    "javascript" : {"tagfile":".js.tags","args":"-R","cmd":"ctags"}
 \}
+"let g:taggatron_verbose = 1
 set tags=.php.tags
 
 let g:DisableAutoPHPFolding = 1
@@ -107,8 +117,17 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 
-let g:phpcomplete_relax_static_constraint = 1
+" Snippets variables
+let g:snips_author='Alonzo Tolver'
+let g:author='Alonzo Tolver'
+let g:snips_email='alonzotolver@gmail.com'
+let g:email='alonzotolver@gmail.com'
+let g:snips_github='https://github.com/atolver'
+let g:github='https://github.com/atolver'
+
+"let g:phpcomplete_relax_static_constraint = 1
 let g:phpcomplete_search_tags_for_variables = 1
+let g:phpcomplete_parse_docblock_comments = 1
 
 inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 noremap <Leader>u :call PhpInsertUse()<CR>
@@ -145,3 +164,4 @@ endfunction
 nmap ,2 :call AddDependency()<cr>
 
 let g:php_refactor_command="php ~/refactor.phar"
+let g:phpqa_messdetector_ruleset = "~/phpmd.xml"

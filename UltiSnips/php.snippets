@@ -21,3 +21,77 @@ endsnippet
 snippet kv "key => value filler for array"
 ${1:key} => ${2:value}
 endsnippet
+
+snippet fdoc "File Document Block." b
+/**
+ * ${1:MyClass} File Doc Comment
+ *
+ * PHP version 5
+ *
+ * @category $1
+ * @package  ${2:MyPackage}
+ * @author   Alonzo Tolver <alonzotolver@gmail.com>
+ * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link     www.laracbook.app
+ *
+ */
+endsnippet
+
+snippet cdoc "Class Document Block." b
+/**
+ * ${1:MyClass} Class Doc Comment
+ *
+ * @category $1
+ * @package  ${2:MyPackage}
+ * @author   Alonzo Tolver <alonzotolver@gmail.com>
+ * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link     www.laracbook.app
+ *
+ */
+endsnippet
+
+snippet constructor "__construct()" b
+${1/\$(\w+)(, )*/\n	protected $$1;/g}
+
+/**
+ * Constructor
+ *
+ * @param $2mixed ${1/, /\n     * \@param mixed /g}
+ */
+public function __construct(${1:$dependencies})
+{${1/\$(\w+)(, )*/\n        $this->$1 = $$1;/g}
+}
+$0
+endsnippet
+
+snippet classa "Class declaration template" b
+/**
+ * Class ${1:`!p snip.rv=snip.fn.split('.')[0]`}
+ *
+ * @category $1
+ * @package	 ${2:MyPackage}
+ * @author   ${3:`!v g:snips_author`} <${4:`!v g:snips_email`}>
+ * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @link     ${5:www.example.com}
+ */
+class $1
+{
+
+}
+$0
+endsnippet
+
+snippet funcdoc "Function with document block"
+/**
+ * $2
+ *
+ * @param ${7:mixed} $3 ${8:description}
+ *
+ * @return ${4:mixed}
+ * @author ${5:`!v g:snips_author`} <${6:`!v g:snips_email`}>
+ *
+ **/
+${1:public }function ${2:someFunc}(${3})
+{${9}
+}
+endsnippet

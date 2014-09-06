@@ -17,5 +17,13 @@ call janus#disable_plugin('snipmate')
 
 
 let g:UltiSnipsListSnippets="<leader>sl"
+let g:UltiSnipsExpandTrigger="<leader>se"
 
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = 'context'
+
+let g:EclimCompletionMethod = 'omnifunc'
+
+"let g:DisableAutoPHPFolding = 1
+
+let g:pdv_template_dir = $HOME . "/.janus/pdv/templates_snip"
+nnoremap <buffer> <leader>pd :call pdv#DocumentWithSnip()<CR>
