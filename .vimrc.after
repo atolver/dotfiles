@@ -90,10 +90,10 @@ set directory=~/.vim/swap//
 " Run PHPUnit tests
 map <leader>t :!clear && phpunit<cr>
 
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled=1
 
 " Taggatron settings
-let g:tagcommands = {
+let g:tagcommands={
 \    "php" : {
 \       "tagfile":".php.tags",
 \       "args":"-R --fields=+aimS --PHP-kinds=+cf --regex-php=\"/^[ \\t]*trait[ \\t]+([a-z0_9_]+)/\\1/t,traits/i\"",
@@ -106,11 +106,12 @@ let g:tagcommands = {
 \   },
 \    "javascript" : {"tagfile":".js.tags","args":"-R","cmd":"ctags"}
 \}
-"let g:taggatron_verbose = 1
+"let g:taggatron_verbose=1
 set tags=.php.tags
 
-let g:DisableAutoPHPFolding = 1
+let g:DisableAutoPHPFolding=1
 let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -125,9 +126,9 @@ let g:email='alonzotolver@gmail.com'
 let g:snips_github='https://github.com/atolver'
 let g:github='https://github.com/atolver'
 
-"let g:phpcomplete_relax_static_constraint = 1
-let g:phpcomplete_search_tags_for_variables = 1
-let g:phpcomplete_parse_docblock_comments = 1
+"let g:phpcomplete_relax_static_constraint=1
+let g:phpcomplete_search_tags_for_variables=1
+let g:phpcomplete_parse_docblock_comments=1
 
 inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
 noremap <Leader>u :call PhpInsertUse()<CR>
@@ -145,12 +146,12 @@ command! H let @/=""
 " Add a new dependency to a PHP class
 function! AddDependency()
 call inputsave()
-let dependency = input('Var Name: ')
-let namespace = input('Class Path: ')
+let dependency=input('Var Name: ')
+let namespace=input('Class Path: ')
 call inputrestore()
 
-let segments = split(namespace, '\')
-let typehint = segments[-1]
+let segments=split(namespace, '\')
+let typehint=segments[-1]
 
 exec "normal! gg/construct\<cr>:H\<cr>f)i, " . typehint . " $" .
             \ dependency . "\<esc>/}\<cr>O$this->\<esc>a" .
@@ -164,4 +165,4 @@ endfunction
 nmap ,2 :call AddDependency()<cr>
 
 let g:php_refactor_command="php ~/refactor.phar"
-let g:phpqa_messdetector_ruleset = "~/phpmd.xml"
+let g:phpqa_messdetector_ruleset="~/phpmd.xml"

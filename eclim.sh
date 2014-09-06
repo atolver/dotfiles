@@ -2,12 +2,12 @@
 case "$1" in
     start)
         echo -n "Starting eclim..."
-        ./start_eclim > /dev/null 2>&1
+        ~/bin/start_eclim > /dev/null 2>&1
         echo "OK"
         ;;
     stop)
         echo -n "Shutting down eclim..."
-        ./stop_eclim > /dev/null 2>&1
+        ~/bin/stop_eclim > /dev/null 2>&1
         echo "OK"
         ;;
     *)
