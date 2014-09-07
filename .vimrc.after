@@ -166,3 +166,5 @@ nmap ,2 :call AddDependency()<cr>
 
 let g:php_refactor_command="php ~/refactor.phar"
 let g:phpqa_messdetector_ruleset="~/phpmd.xml"
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip

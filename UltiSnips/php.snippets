@@ -51,15 +51,14 @@ snippet cdoc "Class Document Block." b
 endsnippet
 
 snippet constructor "__construct()" b
-${1/\$(\w+)(, )*/\n	protected $$1;/g}
+${1/(?:\w+\s+)?\$(\w+)(, )*/\n	protected $$1;/g}
 
 /**
  * Constructor
- *
- * @param $2mixed ${1/, /\n     * \@param mixed /g}
+ * $2${1/((\w+\s+)\$(\w+)(, )*)|(\$(\w+)(, )*)/\n     * \@param (?1:$2$3)(?5:mixed $$6)/g}
  */
 public function __construct(${1:$dependencies})
-{${1/\$(\w+)(, )*/\n        $this->$1 = $$1;/g}
+{${1/(?:\w+\s+)?\$(\w+)(, )*/\n        $this->$1 = $$1;/g}
 }
 $0
 endsnippet
