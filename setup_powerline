@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+export DEBIAN_FRONTEND=noninteractive
+rm -rf ~/.config
+mkdir ~/.config
+mkdir ~/.config/powerline
+cp -rf /usr/local/lib/python2.7/dist-packages/powerline/config_files/* ~/.config/powerline
+cd ~/.config/powerline/colorschemes
+rm ~/.config/powerline/config.json
+rm ~/.config/powerline/colors.json
+ln -s ~/.dotfiles/.config/powerline/config.json ~/.config/powerline/config.json
+ln -s ~/.dotfiles/.config/powerline/colors.json ~/.config/powerline/colors.json
+cd ~/.config/powerline/colorschemes/vim
+rm ~/.config/powerline/colorschemes/vim/tomorrow.json
+ln -s ~/.dotfiles/.config/powerline/colorschemes/vim/tomorrow.json tomorrow.json
+cd ~/.config/powerline/colorschemes/shell
+rm ~/.config/powerline/colorschemes/shell/tomorrow.json
+ln -s ~/.dotfiles/.config/powerline/colorschemes/shell/tomorrow.json tomorrow.json
+cd ~/

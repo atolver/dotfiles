@@ -20,9 +20,10 @@ su -c "cd /home/vagrant/.dotfiles && ./setup_zsh" vagrant
 su -c "sudo chsh -s $(which zsh) vagrant" vagrant
 
 pip install git+git://github.com/Lokaltog/powerline
-mv PowerlineSymbols.otf /usr/share/fonts/
+#mv PowerlineSymbols.otf /usr/share/fonts/
 fc-cache -vf
-mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+#mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+su -c "cd /home/vagrant/.dotfiles && ./setup_powerline" vagrant
 
 gem install tmuxinator
 su -c "tmuxinator new aet" vagrant

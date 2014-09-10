@@ -11,7 +11,6 @@ set t_Co=256
 set history=100
 
 colorscheme xoria256
-AirlineTheme ubaryd
 
 set linespace=15
 
@@ -44,6 +43,7 @@ nnoremap // q/
 nnoremap ?? q?
 
 inoremap <leader>. ->
+inoremap <leader>> =>
 
 set pastetoggle=<leader>v
 
@@ -162,9 +162,9 @@ exec "normal! gg/construct\<cr>:H\<cr>f)i, " . typehint . " $" .
 " Remove opening comma if there is only one dependency
 exec "normal :%s/(, /(/g"
 endfunction
-nmap ,2 :call AddDependency()<cr>
+nmap ,ad :call AddDependency()<cr>
 
 let g:php_refactor_command="php ~/refactor.phar"
 let g:phpqa_messdetector_ruleset="~/phpmd.xml"
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/\.git/*

@@ -27,7 +27,6 @@ mkdir ~/.janus
 cd ~/.janus
 git clone https://github.com/Shougo/vimproc.vim.git
 git clone https://github.com/Shougo/unite.vim.git
-git clone https://github.com/bling/vim-airline.git
 git clone https://github.com/edkolev/tmuxline.vim.git
 git clone https://github.com/joonty/vim-taggatron.git
 git clone https://github.com/Raimondi/delimitMate.git
@@ -39,7 +38,9 @@ git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/shawncplus/phpcomplete.vim.git
 git clone https://github.com/atolver/vim-php-refactoring.git
 git clone https://github.com/Valloric/YouCompleteMe.git
-
+git clone https://github.com/godlygeek/tabular.git
+git clone https://github.com/bling/vim-bufferline
+git clone https://github.com/shmay/vim-yaml.git
 
 cd ~/.janus/YouCompleteMe
 git submodule update --init --recursive
