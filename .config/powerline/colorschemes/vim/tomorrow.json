@@ -1,0 +1,180 @@
+{
+	"name": "Default color scheme",
+	"groups": {
+		"background":               { "fg": "white", "bg": "gray2" },
+		"background:divider":       { "fg": "gray6", "bg": "gray2" },
+		"mode":                     { "fg": "black", "bg": "blue", "attr": ["bold"] },
+		"visual_range":             { "fg": "brightestorange","bg": "darkorange", "attr": ["bold"] },
+		"modified_indicator":       { "fg": "brightyellow", "bg": "gray4", "attr": ["bold"] },
+		"paste_indicator":          { "fg": "black", "bg": "mediumorange", "attr": ["bold"] },
+		"readonly_indicator":       { "fg": "brightestred", "bg": "gray9" },
+		"branch":                   { "fg": "black", "bg": "gray9" },
+		"branch_dirty":             { "fg": "brightyellow", "bg": "gray9" },
+		"branch_clean":             { "fg": "black", "bg": "gray9" },
+		"branch:divider":           { "fg": "gray4", "bg": "gray9" },
+		"file_directory":           { "fg": "gray9", "bg": "gray4" },
+		"file_name":                { "fg": "black", "bg": "gray9", "attr": ["bold"] },
+		"window_title":             { "fg": "black", "bg": "gray9" },
+		"file_size":                { "fg": "gray8", "bg": "gray2" },
+		"file_name_no_file":        { "fg": "gray9", "bg": "gray4", "attr": ["bold"] },
+		"file_name_empty":          { "fg": "gray9", "bg": "gray4" },
+		"file_format":              { "fg": "gray8", "bg": "gray2" },
+		"file_encoding":            { "fg": "gray8", "bg": "gray2" },
+		"file_type":                { "fg": "gray8", "bg": "gray2" },
+		"file_vcs_status":          { "fg": "brightestred", "bg": "gray4" },
+		"file_vcs_status_M":        { "fg": "brightyellow", "bg": "gray4" },
+		"file_vcs_status_A":        { "fg": "brightgreen", "bg": "gray4" },
+		"line_percent":             { "fg": "gray9", "bg": "gray4" },
+		"line_percent_gradient":    { "fg": "green_yellow_red", "bg": "gray4" },
+		"position":                 { "fg": "black", "bg": "blue" },
+		"position_gradient":        { "fg": "green_yellow_red", "bg": "gray4" },
+		"line_current":             { "fg": "black", "bg": "blue", "attr": ["bold"] },
+		"line_current_symbol":      { "fg": "black", "bg": "blue" },
+		"virtcol_current_gradient": { "fg": "black", "bg": "blue" },
+		"col_current":              { "fg": "gray6", "bg": "gray10" },
+		"modified_buffers":         { "fg": "brightyellow", "bg": "gray2" },
+		"environment":              { "fg": "gray8", "bg": "gray2" },
+		"error":                    { "fg": "brightestred", "bg": "darkred", "attr": ["bold"] },
+		"warning":                  { "fg": "brightyellow", "bg": "darkorange", "attr": ["bold"] },
+		"current_tag":              { "fg": "gray9", "bg": "gray2" }
+	},
+	"mode_translations": {
+		"nc": {
+			"colors": {
+				"brightyellow": "darkorange",
+				"brightestred": "darkred",
+				"gray0": "gray0",
+				"gray1": "gray0",
+				"gray2": "gray0",
+				"gray3": "gray1",
+				"gray4": "gray1",
+				"gray5": "gray1",
+				"gray6": "gray1",
+				"gray7": "gray4",
+				"gray8": "gray4",
+				"gray9": "gray4",
+				"gray10": "gray5",
+				"white": "gray6"
+			}
+		},
+		"i": {
+			"colors": {
+				"gray0": "gray0",
+				"gray1": "gray1",
+				"gray2": "gray2",
+				"gray3": "gray3",
+				"gray4": "gray4",
+				"gray5": "gray5",
+				"gray6": "gray6",
+				"gray7": "gray7",
+				"gray8": "blue",
+				"gray9": "blue",
+				"gray10": "blue"
+			},
+			"groups": {
+				"mode":                 { "fg": "blue", "bg": "gray4", "attr": ["bold"] },
+				"background:divider":   { "fg": "blue", "bg": "gray2" },
+				"branch:divider":       { "fg": "blue", "bg": "gray2" },
+    	    	"position_gradient":    { "fg": "green_yellow_red", "bg": "gray4" },
+        		"line_current":         { "fg": "blue", "bg": "gray4", "attr": ["bold"] },
+        		"line_current_symbol":  { "fg": "blue", "bg": "gray4" },
+		        "virtcol_current_gradient": { "fg": "blue", "bg": "gray4" }
+			}
+		},
+		"v": {
+			"colors": {
+				"gray0": "gray0",
+				"gray1": "gray1",
+				"gray2": "gray2",
+				"gray3": "gray3",
+				"gray4": "gray4",
+				"gray5": "gray5",
+				"gray6": "gray6",
+				"gray7": "gray7",
+				"gray8": "brightestorange",
+				"gray9": "brightestorange",
+				"gray10": "gray10"
+			},
+			"groups": {
+				"mode": { "fg": "darkorange", "bg": "brightestorange", "attr": ["bold"] },
+				"background:divider":   { "fg": "darkorange", "bg": "gray2" },
+				"branch:divider":       { "fg": "darkorange", "bg": "brightestorange" },
+    	    	"position_gradient":    { "fg": "green_yellow_red", "bg": "brightestorange" },
+        		"line_current":         { "fg": "darkorange", "bg": "brightestorange", "attr": ["bold"] },
+        		"line_current_symbol":  { "fg": "darkorange", "bg": "brightestorange" },
+		        "virtcol_current_gradient": { "fg": "darkorange", "bg": "brightestorange" }
+			}
+		},
+		"V": {
+			"colors": {
+				"gray0": "gray0",
+				"gray1": "gray1",
+				"gray2": "gray2",
+				"gray3": "gray3",
+				"gray4": "gray4",
+				"gray5": "gray5",
+				"gray6": "gray6",
+				"gray7": "gray7",
+				"gray8": "brightestorange",
+				"gray9": "brightestorange",
+				"gray10": "gray10"
+			},
+			"groups": {
+				"mode": { "fg": "darkorange", "bg": "brightestorange", "attr": ["bold"] },
+				"background:divider":   { "fg": "darkorange", "bg": "gray2" },
+				"branch:divider":       { "fg": "darkorange", "bg": "brightestorange" },
+    	    	"position_gradient":    { "fg": "green_yellow_red", "bg": "brightestorange" },
+        		"line_current":         { "fg": "darkorange", "bg": "brightestorange", "attr": ["bold"] },
+        		"line_current_symbol":  { "fg": "darkorange", "bg": "brightestorange" },
+		        "virtcol_current_gradient": { "fg": "darkorange", "bg": "brightestorange" }
+			}
+		},
+		"^V": {
+			"colors": {
+				"gray0": "gray0",
+				"gray1": "gray1",
+				"gray2": "gray2",
+				"gray3": "gray3",
+				"gray4": "gray4",
+				"gray5": "gray5",
+				"gray6": "gray6",
+				"gray7": "gray7",
+				"gray8": "brightestorange",
+				"gray9": "brightestorange",
+				"gray10": "gray10"
+			},
+			"groups": {
+				"mode": { "fg": "darkorange", "bg": "brightestorange", "attr": ["bold"] },
+				"background:divider":   { "fg": "darkorange", "bg": "gray2" },
+				"branch:divider":       { "fg": "darkorange", "bg": "brightestorange" },
+    	    	"position_gradient":    { "fg": "green_yellow_red", "bg": "brightestorange" },
+        		"line_current":         { "fg": "darkorange", "bg": "brightestorange", "attr": ["bold"] },
+        		"line_current_symbol":  { "fg": "darkorange", "bg": "brightestorange" },
+		        "virtcol_current_gradient": { "fg": "darkorange", "bg": "brightestorange" }
+			}
+		},
+		"R": {
+			"colors": {
+				"gray0": "gray0",
+				"gray1": "gray1",
+				"gray2": "gray2",
+				"gray3": "gray3",
+				"gray4": "gray4",
+				"gray5": "gray5",
+				"gray6": "gray6",
+				"gray7": "gray7",
+				"gray8": "orangered",
+				"gray9": "orangered",
+				"gray10": "gray10"
+			},
+			"groups": {
+				"mode": { "fg": "orangered", "bg": "gray4", "attr": ["bold"] },
+				"background:divider":   { "fg": "orangered", "bg": "gray2" },
+				"branch:divider":       { "fg": "orangered", "bg": "gray2" },
+        		"line_current":         { "fg": "orangered", "bg": "gray2", "attr": ["bold"] },
+        		"line_current_symbol":  { "fg": "orangered", "bg": "gray2" },
+		        "virtcol_current_gradient": { "fg": "orangered", "bg": "gray2" }
+			}
+		}
+	}
+}
