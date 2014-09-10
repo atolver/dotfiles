@@ -65,6 +65,26 @@ snippet @inc "Blade template include"
 @include('$1')
 endsnippet
 
+
 snippet ife"Blade if error exists" [i]
 @if(\$errors->first('$1')) ${2:has-error} @endif$3
+endsnippet
+
+
+snippet formopen "Laravel form open and close"
+{{ Form::open($1) }}
+	$2
+{{ Form::close() }}
+endsnippet
+
+
+snippet passfield "Laravel password field with label"
+{{ Form::label('$1', '$2:') }}
+{{ Form::password('$1', ${3:null}) }}
+endsnippet
+
+
+snippet textfield "Laravel text field with label"
+{{ Form::label('$1', '$2:') }}
+{{ Form::text('$1', ${3:null}, ${4:null}) }}
 endsnippet

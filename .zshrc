@@ -42,10 +42,19 @@ ZSH_THEME="powerline"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git vi-mode tmux tmuxinator vagrant web-search history-substring-search history)
 
-POWERLINE_SHOW_GIT_ON_RIGHT="true"
-POWERLINE_HIDE_HOST_NAME="true"
-POWERLINE_RIGHT_A="mixed"
-POWERLINE_DATE_FORMAT="%D{%d-%m}"
+#POWERLINE_HIDE_HOST_NAME="true"
+#POWERLINE_RIGHT_A="mixed"
+#POWERLINE_DATE_FORMAT="%D{%d-%m}"
+#POWERLINE_GIT_CLEAN="✔"
+#POWERLINE_GIT_DIRTY="✘"
+#POWERLINE_GIT_ADDED="%F{green}A%F{black}"
+#POWERLINE_GIT_MODIFIED="%F{blue}M%F{black}"
+#POWERLINE_GIT_DELETED="%F{red}D%F{black}"
+#POWERLINE_GIT_UNTRACKED="%F{red}U%F{black}"
+#POWERLINE_GIT_RENAMED="➜"
+#POWERLINE_GIT_UNMERGED="═"
+#POWERLINE_DETECT_SSH="true"
+POWERLINE_HIDE_GIT_PROMPT_STATUS="true"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,16 +62,21 @@ source $ZSH/oh-my-zsh.sh
 # PROMPT Settings
 #__rvm_project_rvmrc
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 PATH=$PATH:~/myscripts:/usr/local/lib/ruby/gems/2.0.0/gems/tmuxinator-0.6.5/bin:/usr/local/lib/ruby/gems/2.0.0/gems/guard-1.8.3/bin:/Library/Python/2.7/site-packages
 PATH=$PATH:/usr/local/Cellar/ruby/2.0.0-p247/bin
 PATH=$PATH:$HOME/.composer/vendor/bin
+PATH=$PATH:/usr/lib/jvm/java-7-openjdk-amd64/bin
+PATH=$PATH:$HOME/bin
+
 export TERM='xterm-256color'
 export CLICOLOR=1
 export EDITOR='vim'
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export ECLIPSE_HOME=/opt/eclipse
 
 if [[ -r /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh

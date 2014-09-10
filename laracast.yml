@@ -21,6 +21,7 @@ root: ~/laracast
 windows:
   - editor: vim .
   - shell: #empty
+  - artisan: php artisan tinker
   - utils:
       layout: main-vertical
       panes:
