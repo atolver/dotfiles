@@ -41,9 +41,11 @@ vmap <leader><leader> <esc>
 nnoremap :: q:
 nnoremap // q/
 nnoremap ?? q?
+nnoremap ;; maA;<esc>`a
 
 inoremap <leader>. ->
 inoremap <leader>> =>
+inoremap ;; <esc>maA;<esc>`aa
 
 set pastetoggle=<leader>v
 
