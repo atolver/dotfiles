@@ -8,6 +8,7 @@ root: ~/larabook
 
 # Runs before everything. Use it to start daemons etc.
 # pre: sudo /etc/rc.d/mysqld start
+pre: eclim stop && eclim start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -21,9 +22,9 @@ root: ~/larabook
 windows:
   - editor: vim .
   - shell: #empty
-  - artisan: php artisan tinker
+  - artisan: clear && php artisan tinker
   - utils:
-      layout: main-vertical
+      layout: bbf3,181x41,0,0{128x41,0,0,3,52x41,129,0,4}
       panes:
-        - gulp; clear
-        - mysql -u homestead -psecret larabook
+        - clear &&mysql -u homestead -psecret larabook -s -t --auto-vertical-output
+        - clear && gulp
