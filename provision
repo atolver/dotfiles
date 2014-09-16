@@ -2,7 +2,7 @@
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-add-repository ppa:phalcon/stable
 apt-get update > /dev/null
-apt-get -y install tmux vim zsh git-core python-pip cmake fontconfig php5-phalcon grc
+apt-get -y install tmux vim zsh git-core python-pip cmake fontconfig grc
 su -c "git config --global user.email 'alonzotolver@gmail.com'" vagrant
 su -c "git config --global user.name 'Alonzo'" vagrant
 su -c "npm install gulp" vagrant
