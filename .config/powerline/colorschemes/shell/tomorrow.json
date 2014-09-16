@@ -6,7 +6,7 @@
 		"superuser": { "fg": "black", "bg": "brightred", "attr": ["bold"] },
 		"virtualenv": { "fg": "black", "bg": "darkcyan" },
 		"branch": { "fg": "black", "bg": "darkblue" },
-		"branch_dirty": { "fg": "brightyellow", "bg": "darkblue" },
+		"branch_dirty": { "fg": "black", "bg": "orangered" },
 		"branch_clean": { "fg": "black", "bg": "darkblue" },
 		"continuation": { "fg": "black", "bg": "gray9" },
 		"continuation:current": { "fg": "black", "bg": "gray9", "attr": ["bold"] },
