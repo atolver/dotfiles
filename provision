@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 export DEBIAN_FRONTEND=noninteractive
-sudo apt-add-repository ppa:phalcon/stable
 apt-get update > /dev/null
 apt-get -y install tmux vim zsh git-core python-pip cmake fontconfig grc
 su -c "git config --global user.email 'alonzotolver@gmail.com'" vagrant

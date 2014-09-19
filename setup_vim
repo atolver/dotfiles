@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 export DEBIAN_FRONTEND=noninteractive
 sudo gem install rake
-sudo apt-get install openjdk-7-jdk xvfb build-essential ant
+sudo apt-get install ant
+sudo apt-get install build-essential
+sudo apt-get install xvfb
+sudo apt-get install openjdk-7-jdk
 sudo easy_install -U Sphinx
 curl -Lo- https://bit.ly/janus-bootstrap | bash
 rm -f ~/.vimrc.before
@@ -41,6 +44,9 @@ git clone https://github.com/Valloric/YouCompleteMe.git
 git clone https://github.com/godlygeek/tabular.git
 git clone https://github.com/bling/vim-bufferline
 git clone https://github.com/shmay/vim-yaml.git
+git clone https://github.com/arnaud-lb/vim-php-namespace.git
+git clone https://github.com/joonty/vim-phpqa.git
+git clone https://github.com/austintaylor/vim-commaobject.git
 
 cd ~/.janus/YouCompleteMe
 git submodule update --init --recursive

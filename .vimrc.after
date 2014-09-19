@@ -10,7 +10,7 @@ set t_Co=256
 
 set history=100
 
-colorscheme xoria256
+colorscheme railscasts
 
 set linespace=15
 
@@ -45,6 +45,8 @@ nnoremap ;; maA;<esc>`a
 
 inoremap <leader>. ->
 inoremap <leader>> =>
+inoremap <leader>ts $this->
+inoremap <leader>sf self::
 inoremap ;; <esc>maA;<esc>`aa
 
 set pastetoggle=<leader>v

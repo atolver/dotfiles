@@ -8,8 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerline"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -70,6 +70,7 @@ PATH=$PATH:/usr/local/Cellar/ruby/2.0.0-p247/bin
 PATH=$PATH:$HOME/.composer/vendor/bin
 PATH=$PATH:/usr/lib/jvm/java-7-openjdk-amd64/bin
 PATH=$PATH:$HOME/bin
+PATH="/usr/local/lib/cw:$PATH"
 
 export TERM='xterm-256color'
 export CLICOLOR=1
@@ -86,3 +87,7 @@ bindkey '\eOA' history-beginning-search-backward
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\eOB' history-beginning-search-forward
 bindkey '\e[B' history-beginning-search-forward
+
+PERL_MB_OPT="--install_base \"/home/vagrant/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/vagrant/perl5"; export PERL_MM_OPT;
+alias ls="ls++ --potsf"

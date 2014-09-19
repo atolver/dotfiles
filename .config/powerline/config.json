@@ -13,7 +13,7 @@
 			}
 		},
 		"shell": {
-			"colorscheme": "tomorrow",
+			"colorscheme": "default",
 			"theme": "default",
 			"local_themes": {
 				"continuation": "continuation",
