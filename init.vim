@@ -1,5 +1,64 @@
+" Basic options --------------------------------------------------------- {{{
 let mapleader = ","
 let g:mapleader = ","
+
+set linespace=15
+set modelines=0
+set autoindent
+set showmode
+set showcmd
+set hidden
+set visualbell
+set ttyfast
+set ruler
+set undofile
+set undoreload=10000
+set backspace=indent,eol,start
+set relativenumber
+set number
+set list
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set lazyredraw
+set matchtime=3
+set showbreak=↪
+set splitbelow
+set splitright
+set autowrite
+set autoread
+set shiftround
+set title
+set linebreak
+set colorcolumn=+1
+set ignorecase
+set smartcase
+set timeout timeoutlen=400 ttimeoutlen=200
+set visualbell
+set noerrorbells
+set autowrite
+
+" Don't try to highlight lines longer than 800 characters.
+set synmaxcol=800
+
+" Time out on key codes but not mappings.
+" Basically this makes terminal Vim work sanely.
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+
+" Make Vim able to edit crontab files again.
+set backupskip=/tmp/*,/private/tmp/*"
+
+" Better Completion
+set complete=.,w,b,u,t
+set completeopt=longest,menuone,preview
+
+" Save when losing focus
+au FocusLost * :silent! wall
+
+" Resize splits when the window is resized
+au VimResized * :wincmd =
+
+" }}}
 
 " Load Pluggins
 call plug#begin()
@@ -72,7 +131,6 @@ nmap <leader>gl :Glog<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gp :Git push<CR>
 
-set relativenumber
 set nocompatible
 set t_Co=256
 
@@ -82,16 +140,6 @@ set history=100
 colorscheme railscasts
 "colorscheme tir_black
 "colorscheme moonshine
-
-set linespace=15
-
-set number
-set ignorecase
-set smartcase
-set timeout timeoutlen=400 ttimeoutlen=200
-set visualbell
-set noerrorbells
-set autowrite
 
 nmap <leader>w :w!<cr>
 
