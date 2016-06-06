@@ -1,30 +1,30 @@
 #!/usr/bin/env bash
-export DEBIAN_FRONTEND=noninteractive
-apt-get update > /dev/null
-apt-get -y install tmux vim zsh git-core python-pip cmake fontconfig grc
-su -c "git config --global user.email 'alonzotolver@gmail.com'" vagrant
-su -c "git config --global user.name 'Alonzo'" vagrant
-su -c "npm install gulp" vagrant
-su -c "cd /home/vagrant/ && git clone https://github.com/atolver/dotfiles.git .dotfiles" vagrant
-su -c "cd /home/vagrant/.dotfiles && ./setup_vim" vagrant
+#export DEBIAN_FRONTEND=noninteractive
+#apt-get update > /dev/null
+#apt-get -y install tmux vim zsh git-core python-pip cmake fontconfig grc
+#su -c "git config --global user.email 'alonzotolver@gmail.com'" vagrant
+#su -c "git config --global user.name 'Alonzo'" vagrant
+#su -c "npm install gulp" vagrant
+#su -c "cd /home/vagrant/ && git clone https://github.com/atolver/dotfiles.git .dotfiles" vagrant
+#su -c "cd /home/vagrant/.dotfiles && ./setup_vim" vagrant
 
-su -c "git clone https://github.com/nitso/colour-mysql-console.git /home/vagrant/colour-mysql-console" vagrant
-su -c "ln -s /home/vagrant/colour-mysql-console/.my.cnf /home/vagrant/.my.cnf" vagrant
-su -c "ln -s /home/vagrant/colour-mysql-console/.grcat /home/vagrant/.grcat" vagrant
+#su -c "git clone https://github.com/nitso/colour-mysql-console.git /home/vagrant/colour-mysql-console" vagrant
+#su -c "ln -s /home/vagrant/colour-mysql-console/.my.cnf /home/vagrant/.my.cnf" vagrant
+#su -c "ln -s /home/vagrant/colour-mysql-console/.grcat /home/vagrant/.grcat" vagrant
 
-su -c "curl -L http://install.ohmyz.sh | sh" vagrant
-su -c "git clone https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git" vagrant
-su -c "cd oh-my-zsh-powerline-theme && ./install_in_omz.sh" vagrant
-su -c "cd /home/vagrant/.dotfiles && ./setup_zsh" vagrant
-su -c "sudo chsh -s $(which zsh) vagrant" vagrant
+#su -c "curl -L http://install.ohmyz.sh | sh" vagrant
+#su -c "git clone https://github.com/jeremyFreeAgent/oh-my-zsh-powerline-theme.git" vagrant
+#su -c "cd oh-my-zsh-powerline-theme && ./install_in_omz.sh" vagrant
+#su -c "cd /home/vagrant/.dotfiles && ./setup_zsh" vagrant
+#su -c "sudo chsh -s $(which zsh) vagrant" vagrant
 
-pip install git+git://github.com/Lokaltog/powerline
+#pip install git+git://github.com/Lokaltog/powerline
 #mv PowerlineSymbols.otf /usr/share/fonts/
-fc-cache -vf
+#fc-cache -vf
 #mv 10-powerline-symbols.conf /etc/fonts/conf.d/
-su -c "cd /home/vagrant/.dotfiles && ./setup_powerline" vagrant
+#su -c "cd /home/vagrant/.dotfiles && ./setup_powerline" vagrant
 
-gem install tmuxinator
-su -c "tmuxinator new aet" vagrant
-su -c "cd /home/vagrant/.dotfiles && ./setup_tmux" vagrant
-su -c "cd /home/vagrant/.dotfiles && ./setup_tmuxinator" vagrant
+#gem install tmuxinator
+#su -c "tmuxinator new aet" vagrant
+#su -c "cd /home/vagrant/.dotfiles && ./setup_tmux" vagrant
+#su -c "cd /home/vagrant/.dotfiles && ./setup_tmuxinator" vagrant

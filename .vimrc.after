@@ -10,7 +10,8 @@ set t_Co=256
 
 set history=100
 
-colorscheme railscasts
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 
 set linespace=15
 
@@ -32,41 +33,6 @@ set timeout timeoutlen=400 ttimeoutlen=200
 set visualbell
 set noerrorbells
 set autowrite
-
-nmap <leader>w :w!<cr>
-
-imap <leader><leader> <esc>
-cmap <leader><leader> <esc>
-vmap <leader><leader> <esc>
-nnoremap :: q:
-nnoremap // q/
-nnoremap ?? q?
-nnoremap ;; maA;<esc>`a
-
-inoremap <leader>. ->
-inoremap <leader>> =>
-inoremap <leader>ts $this->
-inoremap <leader>sf self::
-inoremap ;; <esc>maA;<esc>`aa
-
-set pastetoggle=<leader>v
-
-"Auto change directory to match current file ,cd
-nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
-
-"nmap <C-h> <C-w>h
-"nmap <C-j> <C-w>j
-"nmap <C-k> <C-w>k
-"nmap <C-l> <C-w>l
-
-nnoremap  <silent> <leader>z :ZoomWin<cr><cr>
-
-"Split below
-nmap :sp :rightbelow sp<cr>
-
-" Forward or back to buffer
-nmap :bp :BufSurfBack<cr>
-nmap :bn :BufSurfForward<cr>
 
 set noshowmode
 
@@ -107,20 +73,20 @@ let g:tagcommands={
 \       "tagfile":".php.tags",
 \       "args":"-R --fields=+aimS --PHP-kinds=+cf --regex-php=\"/^[ \\t]*trait[ \\t]+([a-z0_9_]+)/\\1/t,traits/i\"",
 \       "cmd":"ctags"
-\   },
-\    "javascript" : {"tagfile":".js.tags","args":"-R","cmd":"ctags"}
+\   }
 \}
 "let g:taggatron_verbose=1
-set tags=.php.tags
+set tags=.php.tags;/,.js.tags;/
 
 let g:DisableAutoPHPFolding=1
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsExpandTrigger="<Leader>e"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+"let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsListSnippets="<Leader>sl"
 
 " Snippets variables
 let g:snips_author='Alonzo Tolver'
@@ -129,15 +95,6 @@ let g:snips_email='alonzotolver@gmail.com'
 let g:email='alonzotolver@gmail.com'
 let g:snips_github='https://github.com/atolver'
 let g:github='https://github.com/atolver'
-
-"let g:phpcomplete_relax_static_constraint=1
-let g:phpcomplete_search_tags_for_variables=1
-let g:phpcomplete_parse_docblock_comments=1
-
-inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
-noremap <Leader>u :call PhpInsertUse()<CR>
-inoremap <Leader>e <C-O>:call PhpExpandClass()<CR>
-noremap <Leader>e :call PhpExpandClass()<CR>
 
 autocmd cursorhold * set nohlsearch
 autocmd cursormoved * set hlsearch
@@ -168,7 +125,9 @@ exec "normal :%s/(, /(/g"
 endfunction
 nmap ,ad :call AddDependency()<cr>
 
-let g:php_refactor_command="php ~/refactor.phar"
+"let g:php_refactor_command="php ~/refactor.phar"
 let g:phpqa_messdetector_ruleset="~/phpmd.xml"
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/\.git/*
+" ggrep ag settings
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'

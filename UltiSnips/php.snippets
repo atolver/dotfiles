@@ -6,6 +6,15 @@ snippet dvar "Variable with doc block."
 ${3:public }$${4:var};${0}
 endsnippet
 
+snippet $t "$this with arrow. ($this->)"
+$this->$1
+endsnippet
+
+snippet $t= "$this with arrow equals. ($this-> = ;)"
+$this->$1 = $2;
+endsnippet
+
+
 snippet vara "Variable with arrow. ($var->)"
 $${1:var}->
 endsnippet
@@ -123,4 +132,17 @@ class $1
 {
 	$0
 }
+endsnippet
+
+snippet vddp "Pretty var_dump and die." b
+echo "<pre>";
+var_dump($1);
+echo "</pre>";
+die();
+endsnippet
+
+snippet vdp "Pretty var_dump." b
+echo "<pre>";
+var_dump($1);
+echo "</pre>";
 endsnippet

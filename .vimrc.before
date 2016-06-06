@@ -1,5 +1,6 @@
 "let g:airline_powerline_fonts = 1
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+"set rtp+=/usr/lib/python3.4/site-packages/powerline/bindings/vim/
+let $PYTHONPATH='/usr/lib/python3.4/site-packages'
 
 " Always show statusline
 set laststatus=2
@@ -13,16 +14,23 @@ set term=xterm-256color
 let mapleader = ","
 let g:mapleader = ","
 
+set cursorline
+
 call janus#disable_plugin('vim-snipmate')
 call janus#disable_plugin('snipmate')
+call janus#disable_plugin('vim-endwise')
 
 
 let g:UltiSnipsListSnippets="<leader>sl"
-let g:UltiSnipsExpandTrigger="<leader>se"
+let g:UltiSnipsExpandTrigger="<leader>s"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"
 
-let g:SuperTabDefaultCompletionType = 'context'
+"let g:SuperTabDefaultCompletionType = 'context'
 
-let g:EclimCompletionMethod = 'omnifunc'
+
+"let g:EclimCompletionMethod = 'omnifunc'
 
 nnoremap <leader>sc :PhpSearchContext<cr>
 
@@ -59,3 +67,130 @@ let g:vdebug_keymap = {
 \}
 
 let g:tmuxline_preset = 'full'
+
+function! GetBufferList()
+  redir =>buflist
+  silent! ls!
+  redir END
+  return buflist
+endfunction
+
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+
+nmap <silent> <leader>lo :call ToggleList("Location List", 'l')<CR>
+nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+
+imap <leader><leader> <esc>
+cmap <leader><leader> <esc>
+vmap <leader><leader> <esc>
+
+nmap <leader>w :w!<cr>
+imap <leader>w <esc>:w!<cr>
+
+imap <leader><leader> <esc>
+cmap <leader><leader> <esc>
+vmap <leader><leader> <esc>
+
+nnoremap :: q:
+nnoremap // q/
+nnoremap ?? q?
+nnoremap ;; maA;<esc>`a
+
+inoremap <leader>. ->
+inoremap <leader>> =>
+inoremap <leader>ts $this->
+inoremap <leader>sf self::
+inoremap ;; <esc>maA;<esc>`aa
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/\.git/*
+
+" Unmap the arrow keys
+no <down> <Nop>
+no <left> <Nop>
+no <right> <Nop>
+no <up> <Nop>
+ino <down> <Nop>
+ino <left> <Nop>
+ino <right> <Nop>
+ino <up> <Nop>
+vno <down> <Nop>
+vno <left> <Nop>
+vno <right> <Nop>
+vno <up> <Nop>
+
+let g:ycm_key_list_select_completion=["<tab>"]
+let g:ycm_key_list_previous_completion=["<S-tab>"]
+
+" Grep recursivly with value under cursor.
+noremap <leader>gr :grep -r <C-R><C-W> * .<CR>
+
+" search mappings
+noremap <leader>ff :PhpSearch -p <C-R><C-W> * -t function -a vsplit<CR>
+noremap <leader>fc :Ack! '^class <C-R><C-W> *\b'<CR>
+noremap <leader>fv :PhpSearchContext -a vsplit<CR>
+noremap <leader>fs :PhpSearchContext -a split<CR>
+noremap <leader>fe :PhpSearchContext -a edit<CR>
+
+let g:vim_php_refactoring_auto_validate_visibility = 0
+
+"let g:phpcomplete_relax_static_constraint=1
+let g:phpcomplete_search_tags_for_variables=1
+let g:phpcomplete_parse_docblock_comments=1
+let g:SuperTabDefaultCompletionType = 'context'
+
+let g:EclimCompletionMethod = 'omnifunc'
+
+inoremap <Leader>pu <C-O>:call PhpInsertUse()<CR>
+noremap <Leader>pu :call PhpInsertUse()<CR>
+inoremap <Leader>pe <C-O>:call PhpExpandClass()<CR>
+noremap <Leader>pe :call PhpExpandClass()<CR>
+
+set pastetoggle=<leader>v
+
+"Auto change directory to match current file ,cd
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
+"nmap <C-h> <C-w>h
+"nmap <C-j> <C-w>j
+"nmap <C-k> <C-w>k
+"nmap <C-l> <C-w>l
+
+"I really hate that things don't auto-center
+nmap G Gzz
+nmap n nzz
+nmap N Nzz
+nmap } }zz
+nmap { {zz
+
+" diff
+nmap ]c ]czz
+nmap [c [czz
+
+nnoremap  <silent> <leader>z :ZoomWin<cr><cr>
+
+"Split below
+nmap :sp :rightbelow sp<cr>
+
+" Forward or back to buffer
+nmap :bp :BufSurfBack<cr>
+nmap :bn :BufSurfForward<cr>
+
+let g:jsx_ext_required = 0
